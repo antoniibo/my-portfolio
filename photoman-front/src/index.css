@@ -1,0 +1,185 @@
+/* @font-face {
+  font-family: 'Fixel';
+  src: 
+  url(../font/FixelAll/FixelDisplay/FixelDisplay-Black.otf) format('opentype'),
+  url(../font/FixelAll/FixelDisplay/FixelDisplay-Medium.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+/* @font-face {
+  font-family: Fixel;
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-RegularItalic.otf) format('opentype');
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-RegularItalic.woff2) format('woff2');
+  font-weight: normal;
+  font-style: italic;
+} */
+/* @font-face {
+  font-family: Fixel;
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-Bold.otf) format('opentype');
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+} */
+/* @font-face {
+  font-family: Fixel;
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-BoldItalic.otf) format('opentype');
+  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-BoldItalic.woff2) format('woff2');
+  font-weight: bold;
+  font-style: italic;
+} */
+/* themes controls */
+.classic{
+  --mainColor: #ffffff;
+  --textColor:rgb(0, 0, 0);
+  --textColorDark: rgb(0, 0, 0);
+  --backgroundColor: rgb(250, 250, 250);
+  --specialColor:rgb(255, 255, 255);
+  --borderColor: rgb(0, 0, 0);
+  --shadowColor: rgba(0,0,0,0.1);
+  --backgroundModal: #fff;
+}
+.black{
+  --mainColor: #232323;
+  --textColor: rgb(250, 250, 250);
+  --textColorDark: rgb(250, 250, 250);
+  --backgroundColor: #232323;
+  --specialColor:#232323;
+  --borderColor: rgb(250, 250, 250);
+  --shadowColor:rgba(255, 255, 255, 0.1);
+  --backgroundModal: #232323;
+}
+.book{
+  --mainColor:  #e6d2af;
+  --textColor:rgb(0, 0, 0);
+  --textColorDark: rgb(0, 0, 0);
+  --backgroundColor: rgba(233,196,157,255);
+  --specialColor: #e6d2af;
+  --borderColor: rgb(0, 0, 0);
+  --shadowColor: rgba(0,0,0,0.1);
+  --backgroundModal:  rgba(233,196,157,255);
+}
+.green{
+  --mainColor:  #1e5c04;
+  --textColor:rgb(250, 250, 250);
+  --textColorDark: rgb(0, 0, 0);
+  --backgroundColor: rgb(208, 234, 176);
+  --specialColor: #4d7a3a;
+  --borderColor: rgb(0, 0, 0);
+  --shadowColor: rgba(0,0,0,0.1);
+  --backgroundModal: #4d7a3a;
+}
+.pinky{
+  --mainColor: #ffffffc6;
+  --textColor:rgb(0, 0, 0);
+  --textColorDark: rgb(0, 0, 0);
+  --backgroundColor: rgb(244, 171, 171);
+  --specialColor:rgba(242, 246, 198, 0.74);
+  --borderColor: rgb(0, 0, 0);
+  --shadowColor: rgba(0,0,0,0.1);
+  --backgroundModal: #fff;
+}
+/* images controls */
+.imgVisible{
+  img{
+    visibility:visible;
+  }
+}
+.imgHidden{
+  img{
+    visibility:hidden;
+  }
+}
+.imgGray{
+  img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+}
+
+:root {
+  /* Text size */
+  --headersSize: 27px;
+  /* General */
+  --hoverColor:  #f49446;
+  --generalPadding: 20px;
+}
+ul,li,details,summary,a{
+  list-style: none;
+  text-decoration: none;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* font-family: 'Fixel'; */
+  margin: auto;
+  padding: 0;
+  background-color: var(--backgroundColor);
+  margin: auto;
+  color: var(--textColor);
+  max-width: 1400px;
+  font-size: var(--headersSize);
+}
+a {
+  color: inherit;
+}
+a:hover, button:hover, .close-modal:hover, .prev-item:hover,.language-swooper  p:hover{
+  scale: 1.05;
+  cursor: pointer;
+  color:var(--hoverColor)
+}
+label{
+  font-weight: bold;
+}
+button {
+  border: 2px solid var(--borderColor);
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: var(--specialColor);
+  color: var(--textColor);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--borderColor);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+textarea{
+  resize: vertical;
+}
+.center-button{
+  align-items: center;
+  text-align: center;
+  padding-top: var(--generalPadding);
+}
+.get-more{
+  background-color: var(--mainColor);
+  margin: auto;
+}
+.slider-header{
+  text-align: center;
+  align-items: center;
+  color: var(--textColorDark);
+}
+.section-header{
+  text-align: center;
+  padding-bottom: var(--generalPadding);
+  color: var(--textColorDark);
+}
+path{
+  display: none;
+}
+@media only screen and (max-width: 1400px) {
+  body{
+    margin: 0 10px;
+  }
+  
+}
+

@@ -1,0 +1,16 @@
+.prev-button, .next-button {
+    position: absolute;
+    background-color: var(--mainColor);
+    margin: auto;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.prev-button {
+    left: 0px;
+}
+.next-button {
+    right: 0px;
+} 
+

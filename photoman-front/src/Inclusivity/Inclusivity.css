@@ -1,0 +1,30 @@
+.inclusivity-box{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #f3ecec;
+    color: black;
+    max-height: 0; 
+    overflow: hidden;
+    gap:20px;
+    opacity: 0;
+    visibility: hidden;
+}
+.display{
+    padding: var(--generalPadding);
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible; 
+}
+.inclusivity-box, .display{
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+.inclusivity-box button{
+    margin: 0 5px;
+}
+.change-size button{
+    min-width: 52px
+}
+svg{
+    color: var(--textColor);
+}

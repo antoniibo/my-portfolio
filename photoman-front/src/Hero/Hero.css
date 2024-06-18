@@ -1,0 +1,130 @@
+/* Main hero */
+.hero {
+  padding: var(--generalPadding);
+  color: var(--textColorDark);
+  height: calc(6*320px);
+  max-height: 1500px;
+  /* overflow: hidden; */
+}
+.hero-box{
+  position: sticky;
+  top: 5px;
+  display: flex;
+  justify-content: space-between;
+  height: 95vh;
+  max-height: 600px;
+  overflow: hidden;
+}
+.hero-text, .hero-image {
+    margin: auto;
+    flex: 1; 
+}
+.hero-text{
+    display: flex;
+    /* padding-left: 20px; */
+    flex-direction: column;
+    align-items: center; 
+
+}
+.hero-text h1{
+    font-size: calc(2*var(--headersSize));
+}
+.hero-image{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.hero img {
+    animation: waveAnimation 2.5s ease-in-out infinite;
+    height: 550px;
+    width: auto;
+    transform-origin: bottom center;
+}
+@keyframes waveAnimation {
+  0%,100%{
+    transform: rotate(0deg);
+  }
+  16%{
+    transform: rotate(7deg);
+  }
+  33%{
+    transform: rotate(-8deg);
+  }
+  49%{
+    transform: rotate(5deg);
+  }
+  66%{
+    transform: rotate(-5deg);
+  }
+}
+/* Hero for about and project*/
+.hero-page{
+  padding: var(--generalPadding);
+  color: var(--textColorDark);
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.hero-page-box{
+  display: flex;
+}
+.hero-page-text{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero-page-text h3{
+  font-weight: normal;
+}
+
+/* about hero*/
+.hero-about-image img{
+  padding-top: 20px;
+  animation: likeAnimation 1.5s ease-in-out;
+  height: 500px;
+  transform-origin: bottom right;
+}
+.quote{
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+@keyframes likeAnimation{
+  0%{
+    transform: rotate(90deg);
+  }
+  60%{
+    transform: rotate(0deg);
+  }
+  85%{
+    transform: rotate(15deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+/* project hero */
+.hero-project-image{
+  max-width: 50%;
+}
+.hero-project-image img{
+  animation: arriveAnimation 2s ease-in-out;
+  transform-origin: right center;
+  height: 400px;
+}
+@keyframes arriveAnimation{
+  0% {
+    transform: translateX(100%);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  85%{
+    transform: translateX(15%);
+  }
+  100%{
+    transform: translateX(0)
+  }
+}
+
+  

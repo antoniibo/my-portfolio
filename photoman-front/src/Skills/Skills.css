@@ -1,0 +1,33 @@
+.skills{
+    padding: var(--generalPadding);
+    padding-top: 0;
+}
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-item {
+    background-color: var(--mainColor);
+    border: 2px solid var(--borderColor);
+    /* border-radius: 8px; */
+    padding: 15px 20px;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--shadowColor);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadowColor);
+    cursor:default;
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: calc(1.1*var(--headersSize));
+    color: var(--textColor);
+}

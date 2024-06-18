@@ -1,0 +1,20 @@
+.prev-item {
+  flex: 0 1 calc(45% - 10px);
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--specialColor);
+  border: 2px solid var(--borderColor);
+  padding: var(--generalPadding);
+  border-radius: 8px;
+}
+  
+.prev-image {
+  height: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+  
+.prev-title {
+  font-size: var(--headersSize);
+  margin-bottom: 5px;
+}

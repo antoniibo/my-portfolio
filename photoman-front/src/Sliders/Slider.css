@@ -1,0 +1,59 @@
+.slider-box{
+    padding: var(--generalPadding);
+}
+/* Regular slider for about */
+.about{
+    padding-bottom: 0;
+}
+.center-slider{
+    padding: var(--generalPadding) 0;
+}
+.slide {
+    margin-top: 35px;
+    opacity: 0.5;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    transition: transform 0.5s, opacity 0.5s;
+    border: 2px solid var(--borderColor);
+    box-sizing: border-box;
+    padding: var(--generalPadding);
+    background-color: var(--specialColor);
+}
+.slide.active {
+    margin-top: 0;
+    width: 250px;
+    height: 220px;
+    opacity: 1;
+}
+.slide h3{
+    height: 125px;
+}
+
+/* Image slide for projects */
+.img-slide{
+    margin-top: 10px;
+    opacity: 0.5;
+    width: 200px;
+    height: 230px;
+    text-align: center;
+    transition: transform 0.5s, opacity 0.5s;
+    border: 2px solid var(--borderColor);
+    box-sizing: border-box;
+    padding: var(--generalPadding);
+    background-color: var(--specialColor);
+}
+.img-slide img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+.img-slide.active{
+    margin-top: 0;
+    opacity: 1;
+    height: 250px;
+}
+.img-slide.active img{
+    width: 160px;
+    height: 160px;
+}
