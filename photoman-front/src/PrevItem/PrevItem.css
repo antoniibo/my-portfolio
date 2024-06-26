@@ -1,5 +1,6 @@
 .prev-item {
   flex: 0 1 calc(45% - 10px);
+  width: 100%;
   box-sizing: border-box;
   text-align: center;
   background-color: var(--specialColor);
@@ -17,4 +18,9 @@
 .prev-title {
   font-size: var(--headersSize);
   margin-bottom: 5px;
+}
+@media only screen and (max-width: 775px){
+  .prev-item{
+    flex: 1;
+  }
 }

@@ -4,9 +4,13 @@
 .contact-box {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
 }
 .contact-form, .contact-details {
+    flex-grow: 1;
+    flex-basis: 300px;
     width: 48%;
     min-height: auto;
 }
@@ -16,14 +20,18 @@
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--generalPadding);
     margin: auto;
 }
 .first-row {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--generalPadding);
 }
 .first-row p{
+    flex-grow: 1;
+    flex-basis: 160px;
     width: 50%;
 }
 .contact-form, .contact-details p {
@@ -35,4 +43,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+@media only screen and (max-width: 1000px) {
+    .contact-box{
+        gap: var(--generalPadding);
+    }
+  
+    
 }

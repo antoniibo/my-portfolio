@@ -20,12 +20,25 @@
     border-radius: 8px;
     background-color: #dadada;
     max-height: 650px;
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 .intro-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+@media only screen and (max-width:  775px) {
+    .intro-flex{
+        flex-direction: column;
+    }
+    .intro-image{
+        margin: auto;
+        max-width: 700px;
+        height: 450px
+    }
+    .intro-image img{
+        height: 450px;
+    }
+    .toHide{
+        display: none;
+    }
 }

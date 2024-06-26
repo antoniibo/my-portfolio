@@ -43,6 +43,8 @@
 .modal-text-container {
     max-height: 500px;
     overflow-y: auto;
+    background-color: rgba(205, 204, 204, 0.2);
+    border-radius: 8px;
 }
 /* cert modal */
 .date-place{
@@ -50,20 +52,23 @@
     justify-content: space-around; 
     position: absolute;
     bottom: var(--generalPadding);
-    width: 100%; 
+    left: 0;
+    right: 0;
 }
 
 .modal-content img{
     border: 2px solid var(--borderColor);
     border-radius: 8px;
-    max-width: 500px;
-    object-fit: cover; 
+    max-width: 600px;
+    /* object-fit: cover;  */
     
 }
 .modal-cert-container{
     height: 370px;
    overflow: hidden;
    overflow-y: auto;
+   background-color: rgba(205, 204, 204, 0.2);
+    border-radius: 8px;
 }
 
 /* project modal */
@@ -82,4 +87,18 @@
 .modal-container{
     max-height: 300px;
     overflow-y: auto;
+    background-color: rgba(205, 204, 204, 0.2);
+    border-radius: 8px;
+}
+@media only screen and (max-width: 775px){
+    .modal-content img{
+        max-width: 100%;
+    }
+    .modal-content h2{
+        font-size: calc(0.9*var(--headersSize));
+        padding-bottom: 15px;
+    }
+    .content-link{
+        padding: 0 5px;
+    }
 }

@@ -14,7 +14,6 @@
     width: 200px;
     height: 150px;
     text-align: center;
-    transition: transform 0.5s, opacity 0.5s;
     border: 2px solid var(--borderColor);
     box-sizing: border-box;
     padding: var(--generalPadding);
@@ -26,9 +25,10 @@
     height: 220px;
     opacity: 1;
 }
-.slide h3{
+.slider-header-box{
     height: 125px;
 }
+
 
 /* Image slide for projects */
 .img-slide{
@@ -57,3 +57,24 @@
     width: 160px;
     height: 160px;
 }
+
+@media only screen and (max-width: 1000px) {
+    .slide{
+        height: 130px;
+        margin-top: 25px
+    }
+    .slide.active{
+        height: 180px;
+    }
+    .slider-header-box{
+        height: 110px;
+    }
+    /* top slider */
+    .img-slide{
+        height: 200px
+    }
+    .img-slide.active{
+        height: 220px;
+    }
+    
+  }

@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css'
 import hiHand from '../assets/hiHand.png'
 
+const FADE_START_OFFSET = 1600;
+const FADE_END_OFFSET = 400;
+const TEXT_POSITION_OFFSET = 220;
+const TEXT_OPACITY_RANGE = 440;
+
 function Hero() {
     const texts = [
         "Welcome here!",
@@ -13,17 +18,26 @@ function Hero() {
     ];
 
     const [opacity, setOpacity] = useState(texts.map((text, i) => (i === 0 ? 1 : i === 1 ? 0.5 : 0)));
-
+    const [arrowOpacity, setArrowOpacity] = useState(1);
     useEffect(() => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
                 const scrollPosition = window.scrollY;
+                const heroSection = document.querySelector('.hero');
+                const heroHeight = heroSection.offsetHeight;
+                const fadeStart = heroHeight - FADE_START_OFFSET; 
+                const fadeEnd = heroHeight - FADE_END_OFFSET; 
+
+                let newArrowOpacity = 1;
+                if (scrollPosition > fadeStart) {
+                    newArrowOpacity = Math.max(0, 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart));
+                }
+                setArrowOpacity(newArrowOpacity);
                 const newOpacity = texts.map((text, i) => {
-                    const textPosition = i * 220; 
-                    const range = 440; 
+                    const textPosition = i * TEXT_POSITION_OFFSET; 
                     const textOpacity = i === texts.length - 1 && scrollPosition > textPosition
                         ? 1 
-                        : Math.max(0, 1 - Math.abs(scrollPosition - textPosition) / range);
+                        : Math.max(0, 1 - Math.abs(scrollPosition - textPosition) / TEXT_OPACITY_RANGE);
                     return textOpacity;
                 });
                 setOpacity(newOpacity);
@@ -48,26 +62,10 @@ function Hero() {
                 <div className="hero-image">
                     <img src={hiHand} alt="illustration" />
                 </div>
+                    <p className="wayer" style={{ opacity: arrowOpacity }}>❯</p>
             </div>
         </section>
     );
 }
 
 export default Hero;
-
-{/* <div className="hero">
-            <h1>Welcome here!
-                I am Antonii Bondar, 
-                Software Developer, 
-                Freelancer, 
-                Designer, 
-                and just a person with a taste for style
-            </h1>
-            <img src={hand} alt="hello hand" />
-            {/* <img src={face} alt="my face" />
-            <img src={programmer} alt="programmer face" />
-            <img src={happy} alt="happy face" />
-            <img src={designer} alt="crazy face" />
-            <img src={tongueFace} alt="face with tongue" /> */}
-
- {/*       </div> */}

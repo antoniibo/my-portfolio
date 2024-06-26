@@ -48,12 +48,14 @@ function AboutSlider() {
 
     return (
         <section className="slider-box about">
-            <h2 className="slider-header">Little bit more aboute me</h2>
+            <h2 className="slider-header">Little bit more about me</h2>
             <div className="center-slider">
                 <Slider {...settings}>
                     {sections.map((section, index) => (
                         <div key={index} className={`slide ${index === activeSlide ? 'active' : ''}`}>
-                            <h3>{section.title}</h3>
+                            <div className="slider-header-box">
+                                 <h3>{section.title}</h3>
+                            </div>
                             {index === activeSlide && (
                                 <button className="get-more" onClick={() => openModal(section)}>
                                     Read More

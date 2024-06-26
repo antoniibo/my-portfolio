@@ -14,14 +14,14 @@ function Introduction(){
                         Welcome to my website, where you can see my 
                         projects and ideas. Here you will find not only software solutions, 
                         but also my artistic works, presented in the form of sites and 
-                        interesting code developments. I am an extroverted person and I am 
+                        interesting code developments. <span className="toHide">I am an extroverted person and I am 
                         always happy to be around wonderful people. They inspire me to develop, 
-                        and I, in turn, strive to bring something new and exciting to our community. 
+                        and I, in turn, strive to bring something new and exciting to our community.</span> 
                     </p>
                     <p>
                         On this site, you will be able to see how I combine technical skills with 
-                        creativity, creating unique and innovative solutions. Every project for me is an opportunity 
-                        to explore new horizons and improve my skills. I believe that programming and art are two wings that 
+                        creativity, creating unique and innovative solutions.<span className="toHide"> Every project for me is an opportunity 
+                        to explore new horizons and improve my skills.</span> I believe that programming and art are two wings that 
                         allow my creativity to soar to new heights. 
                     </p>
                     <div className="center-button">
