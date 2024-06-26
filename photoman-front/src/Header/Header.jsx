@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Header.css' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -18,8 +18,13 @@ function Header(){
         setInclusivityBoxVisible(prevState => !prevState);
     };
     const toggleNavVisible =()=>{
-        setNavVisible(prevState => !prevState)
+        setNavVisible(prevState => !prevState);
     }
+    useEffect(() => {
+        if (isNavVisible) {
+            setInclusivityBoxVisible(false);
+        }
+    }, [isNavVisible]);
 
     return(
         <>
@@ -27,7 +32,7 @@ function Header(){
         <header>
             <nav> 
                 <div className="burger-menu">
-                    <button  onClick={toggleNavVisible}><FontAwesomeIcon icon={faBars} /></button>
+                    <button  onClick={() => { toggleNavVisible() }}><FontAwesomeIcon icon={faBars}/></button>
                 </div>
                 <div className="logo-header">
                     <Link to='/'>

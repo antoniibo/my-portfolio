@@ -19,6 +19,8 @@ function Hero() {
 
     const [opacity, setOpacity] = useState(texts.map((text, i) => (i === 0 ? 1 : i === 1 ? 0.5 : 0)));
     const [arrowOpacity, setArrowOpacity] = useState(1);
+    const [mobileImageStyle, setMobileImageStyle] = useState({});
+    const[mobileAnimation, setMobileAnimation] = useState({});
     useEffect(() => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
@@ -50,6 +52,50 @@ function Hero() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [texts.length]);
+    useEffect(() => {
+        const randomizeMobileImagePosition = () => {
+            const side = Math.floor(Math.random() * 3);
+            let style = {};
+            let imgAnimation={};
+
+            if (side === 0) { // left
+                style = {
+                    left: 0,
+                    right: 'auto',
+                    bottom: 'auto',
+                    transform: 'rotate(90deg)',
+                    top: `${15 + Math.random() * 50}%`
+                };
+            } else if (side === 1) { // right
+                style = {
+                    right: 0,
+                    left: 'auto',
+                    bottom: 'auto',
+                    transform: 'rotate(-90deg)',
+                    top: `${15 + Math.random() * 50}%`
+                };
+            } else { // bottom
+                style = {
+                    bottom: -3,
+                    right: 'auto',
+                    transform: 'rotate(0deg)',
+                    top: 'auto',
+                    left: `${15 + Math.random() * 50}%`
+                };
+            }
+            imgAnimation = {
+                animation: 'MobileHandAnimation 5s infinite'
+            };
+
+            setMobileImageStyle(style);
+            setMobileAnimation( imgAnimation);
+        };
+
+        randomizeMobileImagePosition();
+        const intervalId = setInterval(randomizeMobileImagePosition, 5000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <section className="hero">
@@ -62,7 +108,11 @@ function Hero() {
                 <div className="hero-image">
                     <img src={hiHand} alt="illustration" />
                 </div>
-                    <p className="wayer" style={{ opacity: arrowOpacity }}>❯</p>
+                <div className='mobile-image ' style={mobileImageStyle}>
+                    <img src={hiHand} alt="illustration" style={mobileAnimation} />
+                </div>
+                    
+                <p className="wayer" style={{ opacity: arrowOpacity }}>❯</p>
             </div>
         </section>
     );

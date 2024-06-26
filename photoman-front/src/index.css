@@ -1,32 +1,3 @@
-/* @font-face {
-  font-family: 'Fixel';
-  src: 
-  url(../font/FixelAll/FixelDisplay/FixelDisplay-Black.otf) format('opentype'),
-  url(../font/FixelAll/FixelDisplay/FixelDisplay-Medium.woff2) format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} */
-/* @font-face {
-  font-family: Fixel;
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-RegularItalic.otf) format('opentype');
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-RegularItalic.woff2) format('woff2');
-  font-weight: normal;
-  font-style: italic;
-} */
-/* @font-face {
-  font-family: Fixel;
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-Bold.otf) format('opentype');
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-Bold.woff2) format('woff2');
-  font-weight: bold;
-  font-style: normal;
-} */
-/* @font-face {
-  font-family: Fixel;
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-BoldItalic.otf) format('opentype');
-  src: url(../font/FixelAll/FixelDisplay/FixelDisplay-BoldItalic.woff2) format('woff2');
-  font-weight: bold;
-  font-style: italic;
-} */
 /* themes controls */
 .classic{
   --mainColor: #ffffff;
@@ -186,9 +157,6 @@ textarea{
   text-align: center;
   padding-bottom: var(--generalPadding);
   color: var(--textColorDark);
-}
-path{
-  display: none;
 }
 @media only screen and (max-width: 1400px) {
   body{
