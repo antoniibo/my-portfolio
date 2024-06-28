@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import './Header.css' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars,faXmark } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import logoLight from "../assets/logoVar2Light.png";
-import logoDark from "../assets/logoVar2Dark.png";
+import logoLight from "../assets/logoVar2Light.webp";
+import logoDark from "../assets/logoVar2Dark.webp";
 import Inclusivity from "../Inclusivity/Inclusivity";
 
 
@@ -12,6 +12,8 @@ function Header(){
     const [menu, setMenu] = useState("home")
     const [isInclusivityBoxVisible, setInclusivityBoxVisible] = useState(false);
     const [isNavVisible, setNavVisible] = useState(false);
+    const [icon, setIcon] = useState(faBars);
+    const [rotate, setRotate] = useState(false);
 
 
     const toggleInclusivityBox = () => {
@@ -19,20 +21,24 @@ function Header(){
     };
     const toggleNavVisible =()=>{
         setNavVisible(prevState => !prevState);
+        setIcon(prevIcon => prevIcon === faBars ? faXmark : faBars);
+        setRotate(prevRotate => !prevRotate);
     }
     useEffect(() => {
         if (isNavVisible) {
             setInclusivityBoxVisible(false);
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
         }
     }, [isNavVisible]);
 
     return(
-        <>
-        <Inclusivity isVisible={isInclusivityBoxVisible} toggleVisibility={toggleInclusivityBox} />
         <header>
+            <Inclusivity isVisible={isInclusivityBoxVisible} toggleVisibility={toggleInclusivityBox} />
             <nav> 
                 <div className="burger-menu">
-                    <button  onClick={() => { toggleNavVisible() }}><FontAwesomeIcon icon={faBars}/></button>
+                    <button  onClick={toggleNavVisible}><FontAwesomeIcon icon={icon} className={rotate ? 'rotate' : 'routate-back'} /></button>
                 </div>
                 <div className="logo-header">
                     <Link to='/'>
@@ -56,7 +62,6 @@ function Header(){
                 </div>
             </nav>
         </header>
-        </>
     )
 }
 

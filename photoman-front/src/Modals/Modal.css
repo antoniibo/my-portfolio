@@ -90,6 +90,9 @@
     background-color: rgba(205, 204, 204, 0.2);
     border-radius: 8px;
 }
+.modal-content h2{
+    margin-right: 10px;
+}
 @media only screen and (max-width: 775px){
     .modal-content img{
         max-width: 100%;

@@ -89,10 +89,8 @@
   --hoverColor:  #f49446;
   --generalPadding: 20px;
 }
-ul,li,details,summary,a{
-  list-style: none;
-  text-decoration: none;
-
+html {
+  scroll-behavior: smooth;
 }
 *{
   margin: 0;
@@ -106,6 +104,11 @@ body {
   color: var(--textColor);
   max-width: 1400px;
   font-size: var(--headersSize);
+}
+ul,li,details,summary,a{
+  list-style: none;
+  text-decoration: none;
+
 }
 a {
   color: inherit;
@@ -169,8 +172,7 @@ textarea{
     --headersSize: 22px;
     --generalPadding: 10px;
   }
-  
-
-  
+  .no-scroll {
+    overflow: hidden;
+  }
 }
-

@@ -35,11 +35,11 @@ export const sections = [
 ];
 
 // projects for projects section
-import snakeScreen from '../assets/TheSnake.png'
-import payrollScreen from '../assets/PayRoll.png'
-import goodJScreen from '../assets/juiceLogo.png'
-import apiScreen from '../assets/APIimg.png'
-import BnW from '../assets/BnW.png'
+import snakeScreen from '../assets/TheSnake.webp'
+import payrollScreen from '../assets/PayRoll.webp'
+import goodJScreen from '../assets/juiceLogo.webp'
+import apiScreen from '../assets/APIimg.webp'
+import BnW from '../assets/BnW.webp'
 
 export const projects = [
     {

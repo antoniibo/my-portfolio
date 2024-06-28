@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css'
-import hiHand from '../assets/hiHand.png'
+import hiHand from '../assets/hiHand.webp'
 
 const FADE_START_OFFSET = 1600;
 const FADE_END_OFFSET = 400;
@@ -57,6 +57,7 @@ function Hero() {
             const side = Math.floor(Math.random() * 3);
             let style = {};
             let imgAnimation={};
+            const animationKey = Date.now();
 
             if (side === 0) { // left
                 style = {
@@ -84,7 +85,8 @@ function Hero() {
                 };
             }
             imgAnimation = {
-                animation: 'MobileHandAnimation 5s infinite'
+                animation: 'MobileHandAnimation 5s infinite',
+                animationKey: animationKey
             };
 
             setMobileImageStyle(style);
@@ -96,6 +98,12 @@ function Hero() {
 
         return () => clearInterval(intervalId);
     }, []);
+
+    // wayer scroll
+    const scrollToSection = () =>{
+        const section = document.querySelector('.intro-box');
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
 
     return (
         <section className="hero">
@@ -111,8 +119,9 @@ function Hero() {
                 <div className='mobile-image ' style={mobileImageStyle}>
                     <img src={hiHand} alt="illustration" style={mobileAnimation} />
                 </div>
-                    
-                <p className="wayer" style={{ opacity: arrowOpacity }}>❯</p>
+                <div className='wayer-box'>
+                    <p className="wayer" onClick={scrollToSection} style={{ opacity: arrowOpacity }}>❯</p>
+                </div>
             </div>
         </section>
     );

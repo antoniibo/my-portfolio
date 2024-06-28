@@ -1,6 +1,6 @@
 import React from "react";
 import './Hero.css'
-import goodHand from '../assets/GoodHand.png'
+import goodHand from '../assets/GoodHand.webp'
 
 function HeroAbout(){
     return(

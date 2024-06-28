@@ -1,5 +1,5 @@
 import React from "react";
-import mouseHand from '../assets/mouseHand.png'
+import mouseHand from '../assets/mouseHand.webp'
 import './Hero.css'
 
 function HeroProject(){

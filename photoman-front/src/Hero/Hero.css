@@ -25,15 +25,19 @@
 
 }
 /* show to down arrow */
-.wayer{
-  display: none;
+.wayer-box{
+  display: none; 
   position: absolute;
-  bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; 
+  bottom: 0;
+  justify-content: center;
+}
+.wayer{
   text-align: center;
   align-items: center;
   font-size: 200%;
+  width: 30px;
   animation: jumpDown 2s infinite;
   z-index: 2;
 }
@@ -204,8 +208,8 @@
   }
 }
 @media only screen and (max-width: 1000px){
-  .wayer{
-    display: block;
+  .wayer-box{
+    display: flex;
   }
 }
 @media only screen and (max-width: 775px){

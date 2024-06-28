@@ -1,6 +1,6 @@
 import React from "react";
 import './Introduction.css'
-import introPhoto from '../assets/IntroVar1.jpg'
+import introPhoto from '../assets/IntroVar1.webp'
 import { Link } from "react-router-dom";
 
 function Introduction(){
